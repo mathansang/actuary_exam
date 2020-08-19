@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{CJKutf8}
+\usepackage[english]{babel}
+\usepackage{actuarialsymbol}
+\usepackage{multirow}
+\usepackage{amsmath}
+
+
+\newcommand\answerbox{%%
+         \fbox{\rule{1.0cm}{0pt}\rule[-0.1ex]{0pt}{1.2ex}}}
+
+\newcommand\tab[1][1cm]{\hspace*{#1}}
+
+\begin{document}
+\begin{CJK}{UTF8}{mj}
+
+
+\section*{40회}
+
+5. (1) 연납평준순보험료
+
+$ P = ? ~ $
+
+$ P \ax**{50: \angl{10} } = \Ex[10]{50} \ax**{60} + \ax**{45} -  \ax**{50:45} $
+
+$ \ax**{50: \angl{10}} = \ax**{50} - \Ex[10]{50} \ax**{60} $
+
+$ \tab = 13.3 - 0.51 \times 11.1 = 7.639 $
+
+$ P = \frac{0.51 \times 11.1 + 14.1 - 12.5}{7.639} \approx 0.951 $ 
+
+(2-1) 5보험년도 50생존, 45사망
+
+$ \Vx[5] = \Ex[5]{55} \ax**{60} - P \ax**{55: \angl{5}} $
+
+$ \ax**{55: \angl{5}} = \ax**{55} - \Ex[5]{55} \ax**{60} $ 
+
+$ \tab = 12.3 - 0.708 \times 11.1 \approx 4.441 $ 
+
+$ \Vx[5] = 0.708 \times 11.1 - 0.951 \times 4.441 \approx 3.635 $
+
+(2-2) 15보험년도 
+
+$ \Vx[15] = \ax{\joint{65:60}} = \ax**{65} + \ax**{60} - \ax**{65:60} $ 
+
+$ \tab = 9.9 + 11.1 - 6.2 = 14.8$
+
+
+6. 전기 연납평준 순보험료
+
+$ v = \frac{1}{1.04} \approx 0.962 , v^2 \approx 0.925 $
+
+$ \Ax{60: \angl{2}} = P \ax**{60: \angl{2}} $
+
+$ \lx{61} = 1 - q^{(1)}_{60} - q^{(2)}_{60} = 0.78 $
+
+$ \Ax{60: \angl{2}} = ( 1000 q^{(1)}_{60} + \Vx[1]{} q^{(2)}_{60} ) v + 1000 q^{(1)}_{61} v^2  $
+
+$ \Vx[1]{} = 1000 q^{(1)} v - P \lx{61} $ 
+
+$ \tab = 1000 \times 0.02 \times 0.962 - 0.78 P $
+
+$ \tab = 19.24 - 0.78 P $
+
+$ \ax**{60: \angl{2}} = 1 + (1 - q^{(1)}_{60} - q^{(2)}_{60}) v $
+
+$ \tab = 1 + 0.78 \times 0.962 = 1.75 $
+
+$ \Ax{60: \angl{2}} = ( 20 + 0.2 (19.24 - 0.78 P ) \times 0.962 + 1000 \times 0.03 \times 0.925 $
+
+$ \tab = 50.692 - 0.15 P $
+
+$ 50.692 = 1.75 P + 0.15 P  = 1.9 P $
+
+$ P = \frac{50.692}{1.9} = 26.68 $
+
+
+\end{CJK}
+\end{document}
